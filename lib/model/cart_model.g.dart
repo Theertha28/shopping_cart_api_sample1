@@ -19,7 +19,7 @@ class CartModelAdapter extends TypeAdapter<CartModel> {
     return CartModel(
       id: fields[0] as int?,
       image: fields[2] as String?,
-      title: fields[1] as String?,
+      name: fields[1] as String?,
       qty: fields[3] as int?,
       desc: fields[5] as String?,
       price: fields[4] as double?,
@@ -33,7 +33,7 @@ class CartModelAdapter extends TypeAdapter<CartModel> {
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.title)
+      ..write(obj.name)
       ..writeByte(2)
       ..write(obj.image)
       ..writeByte(3)

@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_cart_api_sample1/controller/home_screen_controller.dart';
+import 'package:shopping_cart_api_sample1/view/cart_screen/cart_screen.dart';
 import 'package:shopping_cart_api_sample1/view/info_screen/info_screen.dart';
 
 
@@ -99,28 +100,36 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
           ),
             actions: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 18),
-                child: Stack(
-                  children: [
-                    Icon(Icons.notifications_none_outlined,
-                  color: Colors.black,
-                  size: 34,),
-                  Positioned(
-                    top: 3,
-                    right: 4,
-                    child:
-                     CircleAvatar(
-                      backgroundColor: Colors.black,
-                  radius: 6,
-                  child: Text("1",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 10
-                    ),),),
-                    ),
-                  ],
-                 ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 18),
+                    child: Stack(
+                      children: [
+                        Icon(Icons.notifications_none_outlined,
+                      color: Colors.black,
+                      size: 34,),
+                      Positioned(
+                        top: 3,
+                        right: 4,
+                        child:
+                         CircleAvatar(
+                          backgroundColor: Colors.black,
+                      radius: 6,
+                      child: Text("1",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 10
+                        ),),),
+                        ),
+                      ],
+                     ),
+                  ),
+                  IconButton(onPressed: (){
+                     Navigator.push(context, 
+                        MaterialPageRoute(builder: (context)=>CartScreen()));
+                  }, icon: Icon(Icons.shopping_cart_outlined))
+                ],
               )
             ],
             ),

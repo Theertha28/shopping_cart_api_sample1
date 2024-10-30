@@ -7,7 +7,7 @@ class CartModel{
   @HiveField(0)
   int? id;
   @HiveField(1)
-  String? title;
+  String? name;
   @HiveField(2)
   String? image;
   @HiveField(3)
@@ -20,7 +20,7 @@ class CartModel{
   CartModel({
     this.id,
     this.image,
-    this.title,
+    this.name,
     this.qty,
     this.desc,
     this.price,
